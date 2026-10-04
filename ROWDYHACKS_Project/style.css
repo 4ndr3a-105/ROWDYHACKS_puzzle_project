@@ -1,0 +1,658 @@
+/* ==========================================
+   GLOBAL / BASE STYLES
+   ========================================== */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./images/B600D760-B55B-48C9-9484-84F304428608_1_201_a.jpeg");
+    background-size: cover;
+    background-position: center;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Base Puzzle Piece Styling */
+.puzzle-piece {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    height: auto;
+}
+
+/* ==========================================
+   MAIN MENU PAGE
+   ========================================== */
+.menu-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 90%;
+    max-width: 480px;
+}
+
+.title-card, 
+.button-group {
+    position: relative;
+    z-index: 1;
+}
+
+.title-card {
+    width: 100%;
+    background-color: #d6e8b3;
+    border: 2.5px solid #1c2b18;
+    border-radius: 20px;
+    padding: 16px 20px;
+    text-align: center;
+    box-shadow: 0px 6px 0px #1c2b18;
+    box-sizing: border-box;
+}
+
+.title-card h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0d120a;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 75%;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    background-color: #d6e8b3;
+    border: 2px solid #1c2b18;
+    border-radius: 20px;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0d120a;
+    box-shadow: 0px 5px 0px #1c2b18;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+}
+
+.btn:hover {
+    background-color: #cde0a5;
+}
+
+.btn:active {
+    transform: translateY(3px);
+    box-shadow: 0px 2px 0px #1c2b18;
+}
+
+/* Main Menu Puzzle Pieces */
+.piece-top-left {
+    top: -20px;
+    left: -40px;
+    width: 130px;
+    transform: rotate(-35deg);
+}
+
+.piece-top-right {
+    top: -30px;
+    right: -35px;
+    width: 120px;
+    transform: rotate(25deg);
+}
+
+.piece-bottom-left {
+    bottom: -40px;
+    left: -70px;
+    width: 280px;
+    transform: rotate(10deg);
+}
+
+/* ==========================================
+   LIBRARY PAGE
+   ========================================== */
+.library-container {
+    display: grid;
+    grid-template-columns: 520px 380px;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: 0 auto;
+}
+
+.photo-card-frame,
+.controls-panel {
+    position: relative;
+}
+
+.photo-card-frame {
+    width: 100%;
+    background-color: #ffffff;
+    border: 3px solid #b8d2a6;
+    border-radius: 18px;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.photo-item {
+    background-color: #d8e8b0;
+    border-radius: 20px;
+    height: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: #111;
+    box-shadow: inset 4px 4px 0px #b5cc8d;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.02);
+}
+
+.controls-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    max-width: 380px;
+}
+
+.page-title-card {
+    width: 100%;
+    background-color: #d6e8b3;
+    border: 3px solid #1c2b18;
+    border-radius: 40px;
+    padding: 8px 16px;
+    text-align: center;
+    box-shadow: 0px 5px 0px #1c2b18;
+    box-sizing: border-box;
+}
+
+.page-title-card h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #1c2b18;
+}
+
+.difficulty-header {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #d6e8b3;
+    border: 3px solid #1c2b18;
+    border-radius: 24px;
+    padding: 8px 16px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.05rem;
+    color: #1c2b18;
+    box-shadow: 0px 5px 0px #1c2b18;
+}
+
+.difficulty-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 92%;
+}
+
+/* Library Puzzle Pieces */
+.lib-piece-top-left {
+    top: -25px;
+    left: -20px;
+    width: 75px;
+    z-index: -1;
+    transform: rotate(-30deg);
+}
+
+.lib-piece-bottom-left {
+    bottom: -20px;
+    left: -25px;
+    width: 80px;
+    z-index: 2;
+    transform: rotate(25deg);
+}
+
+.lib-piece-title {
+    top: -18px;
+    right: -25px;
+    width: 70px;
+    z-index: 2;
+    transform: rotate(18deg);
+}
+
+/* ==========================================
+   UPLOAD PAGE
+   ========================================== */
+.upload-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 460px 360px;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin: 0 auto;
+}
+
+.upload-card {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 420px;
+    background-color: #d8e8b0;
+    border: 3px solid #1c2b18;
+    border-radius: 24px;
+    box-shadow: -6px 6px 0px #1c2b18;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.upload-dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.upload-icon {
+    width: 180px;
+    height: 180px;
+    stroke-width: 2.2;
+}
+
+.upload-controls .upload-title {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #d6e8b3;
+    border: 3px solid #1c2b18;
+    border-radius: 28px;
+    padding: 10px 18px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #1c2b18;
+    box-shadow: 0px 5px 0px #1c2b18;
+    margin-bottom: 8px;
+}
+
+/* Upload Puzzle Pieces */
+.upload-piece-bottom-left {
+    bottom: -40px;
+    left: -50px;
+    width: 160px;
+    z-index: 1;
+    transform: rotate(-15deg);
+}
+
+.upload-piece-top-right {
+    top: 100px;
+    right: 50px;
+    width: 70px;
+    z-index: 1;
+    transform: rotate(20deg);
+}
+
+
+/*
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-image: url("./images/B600D760-B55B-48C9-9484-84F304428608_1_201_a.jpeg");
+    background-size: cover;
+    background-position: center;
+    align-items: center;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    width: 90%
+}
+
+.title-card {
+    width: 100%;
+    Background-color: #d6e8b3;
+    border: 2.5px solid #1c2b18;
+    border-radius: 20px;
+    padding: 16px 20px;
+    text-align: center;
+
+    box-shadow: 0px 6px 0px #1c2b18;
+}
+
+.title-card h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0d120a;
+}
+.button-group{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 75%;
+}
+
+.btn {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background-color: #d6e8b3;
+    border: 2px solid #1c2b18;
+    border-radius: 20px;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0d120a;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    
+    box-shadow: 0px 5px 0px #1c2b18;
+    
+}
+
+.btn:hover {
+    background-color: #cde0a5;
+}
+
+.btn:active {
+    transform: translateY(3px);
+    box-shadow: 0px 2px 0px #1c2b18;
+}
+
+/* this is puzzle pieces */
+.menu-container {
+  position: relative !important; 
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 24px !important;
+  width: 90% !important;
+  max-width: 480px !important;
+}
+
+.puzzle-piece {
+  position: absolute !important;
+  pointer-events: none !important;
+  z-index: 1 !important; 
+  height: auto !important;
+}
+/*pices for main page*/
+.piece-top-left {
+  top: -20px !important;
+  left: -40px !important;
+  width: 130px !important;
+  transform: rotate(-35deg) !important;
+}
+
+.piece-top-right {
+  top: -30px !important;
+  right: -35px !important;
+  width: 120px !important;
+  transform: rotate(25deg) !important;
+}
+.piece-bottom-left {
+  bottom: -40px !important;
+  left: -70px !important;
+  width: 280px !important; 
+  transform: rotate(10deg) !important;
+}
+/*end of main pieces*/
+.title-card, .button-group {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+
+/* --- Library man --- */
+.library-container {
+  display: grid !important;
+  grid-template-columns: 520px 380px !important;
+  gap: 40px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  margin: 0 auto !important;
+}
+
+.photo-card-frame,
+.controls-panel {
+  position: relative !important;
+}
+
+.puzzle-piece {
+  position: absolute !important;
+  pointer-events: none !important;
+  height: auto !important;
+}
+/* library puzzle pieces*/
+.lib-piece-top-left {
+  top: -25px !important;
+  left: -20px !important;
+  width: 75px !important;
+  z-index: -1 !important;
+  transform: rotate(-30deg) !important;
+}
+
+.lib-piece-bottom-left {
+  bottom: -20px !important;
+  left: -25px !important;
+  width: 80px !important;
+  z-index: 2 !important; 
+  transform: rotate(25deg) !important;
+}
+
+.lib-piece-title {
+  top: -18px !important;
+  right: -25px !important;
+  width: 70px !important;
+  z-index: 2 !important;
+  transform: rotate(18deg) !important;
+}
+/*end of library puzzle pieces*/
+.photo-item {
+  height: 135px !important;
+}
+
+.photo-card-frame {
+  width: 100% !important;
+  background-color: #ffffff !important;
+  border: 3px solid #b8d2a6 !important;
+  border-radius: 18px !important;
+  padding: 24px !important;
+  box-sizing: border-box !important;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.photo-item {
+  background-color: #d8e8b0;
+  border-radius: 20px;
+  height: 155px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #111;
+  box-shadow: inset 4px 4px 0px #b5cc8d;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+.photo-item:hover {
+  transform: scale(1.02);
+}
+.controls-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex: 1 !important;
+  max-width: 380px !important;
+}
+.page-title-card {
+  width: 118%;
+  background-color: #ffffff;
+  border: 3px solid #b8d2a6;
+  border-radius: 35px;
+  padding: 14px 24px;
+  text-align: center;
+  box-shadow: 0px 5px 0px #b8d2a6;
+}
+
+.page-title-card {
+  width: 100%;
+  background-color: #d6e8b3;
+  border: 3px solid #1c2b18;
+  border-radius: 40px;
+  padding: 8px 16px;
+  text-align: center;
+  box-shadow: 0px 5px 0px #1c2b18;
+}
+
+.page-title-card h2 {
+  margin: 0 !important;
+  font-size: 1.6rem !important;
+  color: #1c2b18 !important;
+}
+
+.difficulty-header {
+  width: 106% !important;
+  box-sizing: border-box !important;
+  background-color: #d6e8b3 !important;
+  border: 3px solid #1c2b18 !important;
+  border-radius: 24px !important;
+  padding: 8px 16px !important;
+  text-align: center !important;
+  font-weight: bold !important;
+  font-size: 1.05rem !important;
+  color: #1c2b18 !important;
+  box-shadow: 0px 5px 0px #1c2b18 !important;
+}
+
+.difficulty-options {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+  width: 92% !important;
+}
+
+.difficulty-options .btn {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  display: block !important;
+}
+
+
+/* --- upload one --- */
+.upload-container {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: 460px 360px !important;
+  gap: 40px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  margin: 0 auto !important;
+}
+.upload-card {
+  position: relative !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  height: 420px !important;
+  background-color: #d8e8b0 !important;
+  border: 3px solid #1c2b18 !important;
+  border-radius: 24px !important;
+  box-shadow: -6px 6px 0px #1c2b18 !important; /* 3D offset shadow */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+}
+
+.upload-dropzone {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  cursor: pointer !important;
+}
+
+.upload-icon {
+  width: 180px !important;
+  height: 180px !important;
+  stroke-width: 2.2 !important;
+}
+
+.upload-controls .upload-title {
+  width: 108% !important;
+  box-sizing: border-box !important;
+  background-color: #d6e8b3 !important;
+  border: 3px solid #1c2b18 !important;
+  border-radius: 28px !important;
+  padding: 10px 18px !important;
+  text-align: center !important;
+  font-weight: bold !important;
+  font-size: 1.2rem !important;
+  color: #1c2b18 !important;
+  box-shadow: 0px 5px 0px #1c2b18 !important;
+  margin-bottom: 8px !important;
+}
+
+/*import piece */
+.upload-piece-bottom-left {
+  bottom: -40px !important;
+  left: -50px !important;
+  width: 160px !important;
+  z-index: 1 !important; 
+  transform: rotate(-15deg) !important;
+}
+
+.upload-piece-bottom-right {
+  right: 350px !important;
+  top: -50px !important;
+  width: 150px !important;
+  transform: rotate(15deg) !important;
+}
+
+/* hopefull this is the piece in import*/
+.upload-piece-top-right {
+  top: 90px !important;
+  right: -50px !important;
+  width: 170px !important;
+  z-index: 1 !important; 
+  transform: rotate(20deg) !important;
+  height: auto;
+}

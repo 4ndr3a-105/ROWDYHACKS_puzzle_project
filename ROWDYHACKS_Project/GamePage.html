@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puzzle Game</title>
+    <link rel="stylesheet" href="game.css"/>
+    
+</head>
+<body>
+
+    <h2>Turns: <span id="turns">0</span></h2>
+
+    <div id="win-message" style="display: none; font-size: 28px; color: green; font-weight: bold; margin: 15px auto;">
+    🎉 You Solved it! 🎉
+    </div>
+
+  <!-- 1. The main puzzle board area -->
+  <div id="puzzle-board"></div>
+
+  <!-- 2. The area where shuffled pieces sit before dragging -->
+  <div id="pieces"></div>
+
+  <!-- Fallback message if image fails to load -->
+  <p id="noImageMessage" style="display: none;">No image selected yet.</p>
+
+  <br>
+  <a href="index.html">Go Back to Menu</a>
+
+  <!-- Link external JS -->
+  <script src="script.js"></script>
+</body>
+</html>
+

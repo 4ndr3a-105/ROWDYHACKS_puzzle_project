@@ -1,0 +1,43 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-image: url("./images/B600D760-B55B-48C9-9484-84F304428608_1_201_a.jpeg");
+}
+
+/* Tile slots inside the board */
+#puzzle-board img {
+  width: 80px;
+  height: 80px;
+  box-sizing: border-box;
+  border: 1px dashed #aaa; /* Visible tile grid outlines */
+  background-color: #f8f8f8;
+  object-fit: cover;
+}
+
+/* Side pieces container */
+#pieces {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+}
+
+/* Individual side piece div */
+#pieces div {
+  width: 80px;
+  height: 80px;
+  box-sizing: border-box;
+  border: 1px solid #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+}
+
